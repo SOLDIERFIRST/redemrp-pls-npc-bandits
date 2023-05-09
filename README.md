@@ -1,4 +1,4 @@
-# VORP NPC Bandits by Polísek
+# REDEMRP NPC Bandits by Polísek -- EDITED FOR REDEMRP BY SOLDIERFIRST
 
 You can be robbed by NPC bandits
 
