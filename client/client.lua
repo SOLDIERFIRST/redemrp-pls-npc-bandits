@@ -23,10 +23,6 @@ AddEventHandler("onResourceStop",function(resourceName)
         npcs = {}
 end)
 
-
-
-
-
 /* Functions */
 
 function banditsStart(bandits)
@@ -88,19 +84,18 @@ function banditsStart(bandits)
                     end
                     npcs = {}
                     inRobbery = false
-                TriggerEvent('vorp:ShowBasicTopNotification', "All the bandits are down.", 5000)
+                exports["rp_notifs"]:Notification("Ambush!", "All the bandits are down.", "robbery", 5000, "top-right", "white", "white" )
+                --TriggerClientEvent("redemrp_notification:start", "All the bandits are down.", 5, "success")
                 break
                 end
             end
         end
     end)
-    TriggerEvent('vorp:ShowBasicTopNotification', "You were ambushed!", 5000)
+    exports["rp_notifs"]:Notification("Ambush!", "You were ambushed!", "robbery", 5000, "top-right", "white", "white" )
+    --TriggerClientEvent("redemrp_notification:start", "You were ambushed!", 5, "success")
 end
 
-
-
 /*Loops*/
-
 
 Citizen.CreateThread(function()
 	while true do
@@ -137,7 +132,6 @@ Citizen.CreateThread(function()
         if inRobbery == true then
             local runAway = false
             if IsPedDeadOrDying(PlayerPedId(),true) then
-                TriggerEvent('vorp:ShowBasicTopNotification', "You ve been robbed.", 5000)
                 for v,k in pairs(npcs) do
                     DeleteEntity(k)
                 end
@@ -160,7 +154,8 @@ Citizen.CreateThread(function()
                 end
                 npcs = {}
                 inRobbery = false
-                TriggerEvent('vorp:ShowBasicTopNotification', "You managed to escape.", 5000)
+                exports["rp_notifs"]:Notification("Ambush!", "You managed to escape.", "robbery", 5000, "top-right", "white", "white" )
+                --TriggerClientEvent("redemrp_notification:start", "You managed to escape.", 5, "success")
             end
         end
     end
