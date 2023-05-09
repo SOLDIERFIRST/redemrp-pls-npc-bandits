@@ -84,15 +84,13 @@ function banditsStart(bandits)
                     end
                     npcs = {}
                     inRobbery = false
-                exports["rp_notifs"]:Notification("Ambush!", "All the bandits are down.", "robbery", 5000, "top-right", "white", "white" )
-                --TriggerClientEvent("redemrp_notification:start", "All the bandits are down.", 5, "success")
+                TriggerEvent("redemrp_notification:start", "All the bandits are down.", 5, "success")
                 break
                 end
             end
         end
     end)
-    exports["rp_notifs"]:Notification("Ambush!", "You were ambushed!", "robbery", 5000, "top-right", "white", "white" )
-    --TriggerClientEvent("redemrp_notification:start", "You were ambushed!", 5, "success")
+    TriggerEvent("redemrp_notification:start", "You were ambushed!", 5, "success")
 end
 
 /*Loops*/
@@ -154,8 +152,7 @@ Citizen.CreateThread(function()
                 end
                 npcs = {}
                 inRobbery = false
-                exports["rp_notifs"]:Notification("Ambush!", "You managed to escape.", "robbery", 5000, "top-right", "white", "white" )
-                --TriggerClientEvent("redemrp_notification:start", "You managed to escape.", 5, "success")
+                TriggerEvent("redemrp_notification:start", "You managed to escape.", 5, "success")
             end
         end
     end
