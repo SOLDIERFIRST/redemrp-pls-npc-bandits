@@ -84,13 +84,13 @@ function banditsStart(bandits)
                     end
                     npcs = {}
                     inRobbery = false
-                TriggerEvent("redemrp_notification:start", "All the bandits are down.", 5, "success")
+		TriggerEvent('redem_roleplay:NotifyLeft', "Ambush!", "All the bandits are down.", "menu_textures", "log_gang_bag", 5000)
                 break
                 end
             end
         end
     end)
-    TriggerEvent("redemrp_notification:start", "You were ambushed!", 5, "success")
+    TriggerEvent('redem_roleplay:NotifyLeft', "Ambush!", "You were ambushed!", "menu_textures", "log_gang_bag", 5000)
 end
 
 /*Loops*/
@@ -152,7 +152,7 @@ Citizen.CreateThread(function()
                 end
                 npcs = {}
                 inRobbery = false
-                TriggerEvent("redemrp_notification:start", "You managed to escape.", 5, "success")
+		TriggerEvent('redem_roleplay:NotifyLeft', "Ambush!", "You managed to escape.", "menu_textures", "log_gang_bag", 5000)
             end
         end
     end
